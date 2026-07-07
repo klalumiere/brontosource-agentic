@@ -1,0 +1,16 @@
+{
+  "author": {
+    "email": "support@brontosource.dev",
+    "name": "BrontoSource",
+    "url": "https://brontosource.dev"
+  },
+  "description": "A Claude plugin for refactoring C++ safely and efficiently.",
+  "homepage": "https://brontosource.dev",
+  "keywords": [
+    "C++",
+    "refactoring"
+  ],
+  "license": "MIT",
+  "name": "bronto",
+  "version": "0.1.0"
+}

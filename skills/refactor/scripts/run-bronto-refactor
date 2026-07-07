@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+# This script is an internal implementation detail of the /bronto:refactor
+# Claude plugin. Its interface and behavior may change without notice.
+set -euo pipefail
+
+INCLUDES=()
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    --db)
+      DB="$2"
+      shift 2
+      ;;
+    --db=*)
+      DB="${1#--db=}"
+      shift
+      ;;
+    *)
+      INCLUDES+=(--include "$1")
+      shift
+      ;;
+  esac
+done
+
+# Write stderr and stdout to /dev/null because the debug logs cost tokens and
+# are not useful for LLMs
+BRONTO_TEMP_DIR=$(mktemp -d)
+BRONTO_LOG_FILE=$(mktemp)
+echo "Writing output to: $BRONTO_TEMP_DIR"
+echo "Writing logs to: $BRONTO_LOG_FILE"
+bronto-refactor run \
+  --db "$DB" \
+  --output "$BRONTO_TEMP_DIR" \
+  --no-interactive \
+  ${INCLUDES[@]+"${INCLUDES[@]}"} \
+  &> "$BRONTO_LOG_FILE"
+bronto-refactor apply "$BRONTO_TEMP_DIR" --no-interactive &> /dev/null
