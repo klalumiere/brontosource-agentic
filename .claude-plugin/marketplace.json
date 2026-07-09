@@ -12,7 +12,7 @@
       "name": "bronto",
       "description": "Plan and execute refactorings in C and C++ safely.",
       "license": "MIT",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "source": "./claude/bronto",
       "category": "development",
       "keywords": ["c++", "c", "refactoring", "semantic"]

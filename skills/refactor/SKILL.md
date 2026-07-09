@@ -92,4 +92,7 @@ Once the user confirms the plan, for each step in the plan,
 # Key notes
 
 Remember that `BRONTO_*` macros or anything in the `bronto` namespace require
-`#include <bronto/bronto.hpp>`.
+`#include <bronto/bronto.hpp>`. Adding that `#include` is all you need:
+`bronto-refactor` puts `bronto/bronto.hpp` on the include path itself when it
+processes each compile flags. Do not edit `compile_commands.json` or the build
+config to make it resolvable.
