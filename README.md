@@ -17,3 +17,14 @@ send a pull-request to support other harnesses.
    ```
    /plugin install bronto@brontosource
    ```
+
+## Kiro
+
+1. Clone the repository
+   ```
+   git clone https://github.com/brontosource/agentic
+   ```
+1. Link the skill directory
+   ```
+   ln -s $PWD/agentic/skills/refactor $HOME/.kiro/skills/
+   ```
