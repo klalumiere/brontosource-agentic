@@ -2,8 +2,7 @@ This repository hosts a collection of skills, plugins, powers, etc for working w
 
 # Supported Harnesses
 
-At the moment our only supported harness is Claude Code. Please file an issue or
-send a pull-request to support other harnesses.
+Please file an issue or send a pull-request to support other harnesses.
 
 # Installation
 
